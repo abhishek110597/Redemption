@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&#128532; Redemption Plis</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        form {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            min-width: 320px;
+        }
+        label {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 0.3rem;
+        }
+        input[type="text"] {
+            padding: 0.7rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus {
+            border: 1.5px solid #6366f1;
+            outline: none;
+        }
+        button {
+            background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const input = document.getElementById('userInput').value;
+            const messageDiv = document.getElementById('message');
+            if (input === 'boo boo') {
+                const apologyHtml = `
+                    <div style="font-family: 'Segoe UI', Arial, sans-serif; background: #fff; padding: 2.5rem 2rem; border-radius: 1.2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); max-width: 500px; margin: 3rem auto; text-align: center;">
+                        <h1 style="color: #6366f1; margin-bottom: 1.2rem;">I'm truly sorry</h1>
+                        <p style="font-size: 1.1rem; color: #374151; margin-bottom: 1.2rem;">I know I hurt you by not communicating that night, and I regret it deeply. You mean the world to me, and I never want to break your trust again.</p>
+                        <p style="font-size: 1.1rem; color: #374151; margin-bottom: 1.2rem;">I want to make it up to you, not just with words, but with actions. I promise to be honest, open, and to rebuild the trust I broke. You deserve nothing less.</p>
+                        <p style="font-size: 1.1rem; color: #6366f1;">If you can find it in your heart to forgive me, I will do everything I can to make you feel safe and loved again. &hearts;</p>
+
+                        <p>
+                            <img src="./1.jpg" alt="Apology Image" style="width: 100px; height: auto; margin-top: 1.2rem;">
+
+                            <img src="./2.jpg" alt="Apology Image" style="width: 100px; height: auto; margin-top: 1.2rem;">
+                        </p>
+
+                        <p style="font-size: 1.1rem; color: #374151; margin-top: 1.2rem;">I can start apologizing by taking it upon myself to add 5 more orders every month to repent.</p>
+
+                        <p style="font-size: 1.1rem; color: #374151;">- Formally Boo Boo,<br> <span style="color: #6366f1;">Your Apologetic Partner</span></p>
+                    </div>
+                `;
+                const newWin = window.open('', '_blank');
+                if (newWin) {
+                    newWin.document.write(apologyHtml);
+                    newWin.document.close();
+                }
+                if (messageDiv) messageDiv.textContent = '';
+            } else {
+                if (messageDiv) {
+                    messageDiv.textContent = "That's not what you call me! :(";
+                    messageDiv.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form onsubmit="handleSubmit(event)">
+            <label for="userInput">Authentication to ensure no one can get in unless it is us! Plis enter the word we address each other(before our fight):</label>
+            <input type="text" id="userInput" name="userInput" required>
+            <button type="submit">Submit</button>
+            <div id="message" style="display:none; color:#ef4444; font-size:1.05rem; margin-top:1rem; text-align:center;"></div>
+        </form>
+    </div>
+</body>
+</html>
